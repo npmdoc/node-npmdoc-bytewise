@@ -1,0 +1,967 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/deanlandolt/bytewise"
+
+    >bytewise (v1.1.0)</a>
+</h1>
+<h4>Binary serialization which sorts bytewise for arbirarily complex data structures</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bytewise">module bytewise</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">bytewise.</span>buffer</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.compare">
+            function <span class="apidocSignatureSpan">bytewise.</span>compare
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.decode">
+            function <span class="apidocSignatureSpan">bytewise.</span>decode
+            <span class="apidocSignatureSpan">(buffer, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.encode">
+            function <span class="apidocSignatureSpan">bytewise.</span>encode
+            <span class="apidocSignatureSpan">(source, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.equal">
+            function <span class="apidocSignatureSpan">bytewise.</span>equal
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.getType">
+            function <span class="apidocSignatureSpan">bytewise.</span>getType
+            <span class="apidocSignatureSpan">(byte)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.postDecode">
+            function <span class="apidocSignatureSpan">bytewise.</span>postDecode
+            <span class="apidocSignatureSpan">(decoded, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.postEncode">
+            function <span class="apidocSignatureSpan">bytewise.</span>postEncode
+            <span class="apidocSignatureSpan">(encoded, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bytewise.</span>bound</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bytewise.</span>bound.sort</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bytewise.</span>hex</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bytewise.</span>sorts</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bytewise.</span>stringCodec</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bytewise.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bytewise.bound">module bytewise.bound</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.bound.compare">
+            function <span class="apidocSignatureSpan">bytewise.bound.</span>compare
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.bound.encode">
+            function <span class="apidocSignatureSpan">bytewise.bound.</span>encode
+            <span class="apidocSignatureSpan">(data, base)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.bound.getBoundary">
+            function <span class="apidocSignatureSpan">bytewise.bound.</span>getBoundary
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bytewise.bound.</span>sort</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bytewise.bound.sort">module bytewise.bound.sort</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.bound.sort.compare">
+            function <span class="apidocSignatureSpan">bytewise.bound.sort.</span>compare
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.bound.sort.equal">
+            function <span class="apidocSignatureSpan">bytewise.bound.sort.</span>equal
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.bound.sort.invalid">
+            function <span class="apidocSignatureSpan">bytewise.bound.sort.</span>invalid
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bytewise.bound.sort.</span>bound</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bytewise.bound.sort.</span>order</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bytewise.bound.sort.</span>sorts</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bytewise.hex">module bytewise.hex</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">bytewise.hex.</span>buffer</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.hex.decode">
+            function <span class="apidocSignatureSpan">bytewise.hex.</span>decode
+            <span class="apidocSignatureSpan">(buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.hex.encode">
+            function <span class="apidocSignatureSpan">bytewise.hex.</span>encode
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bytewise.hex.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bytewise.stringCodec">module bytewise.stringCodec</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.stringCodec.decode">
+            function <span class="apidocSignatureSpan">bytewise.stringCodec.</span>decode
+            <span class="apidocSignatureSpan">(buffer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bytewise.stringCodec.encode">
+            function <span class="apidocSignatureSpan">bytewise.stringCodec.</span>encode
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bytewise" id="apidoc.module.bytewise">module bytewise</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.compare" id="apidoc.element.bytewise.compare">
+        function <span class="apidocSignatureSpan">bytewise.</span>compare
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compare = function (a, b) {
+  //
+  // test for invalid values
+  //
+  if (base.invalid(a, b))
+    return NaN
+
+  //
+  // short circuit for identical objects
+  //
+  if (a === b)
+    return 0
+
+  //
+  // short circuit for base bound types
+  //
+  var result = base.bound.compare(a, b)
+  if (result !== undefined)
+    return result
+
+  //
+  // cache typeof and valueOf for both values
+  //
+  var aTypeOf = typeof a
+  var bTypeOf = typeof b
+  var aValueOf = _valueOf(a)
+  var bValueOf = _valueOf(b)
+
+  //
+  // loop over type tags and attempt compare
+  //
+  var order = base.order
+  var sorts = base.sorts
+  var sort
+  for (var i = 0, length = order.length; i &#x3c; length; ++i) {
+    sort = sorts[order[i]]
+
+    //
+    // if first arg is a member of this sort we have an answer
+    //
+    if (sort.is(a, aTypeOf))
+      //
+      // if b is the same as a then defer to sort&#x27;s comparator, else a comes first
+      //
+      return sort.is(b, bTypeOf) ? sort.compare(aValueOf, bValueOf) : -1
+
+    //
+    // if b is this type but not a then b comes first
+    //
+    if (sort.is(b, bTypeOf))
+      return 1
+  }
+
+  //
+  // values are incomparable as they didn&#x27;t match against any registered types
+  //
+  return NaN
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.decode" id="apidoc.element.bytewise.decode">
+        function <span class="apidocSignatureSpan">bytewise.</span>decode
+        <span class="apidocSignatureSpan">(buffer, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode = function (buffer, options) {
+  // attempt to decode string input using configurable codec
+  if (typeof buffer === &#x27;string&#x27;) {
+    buffer = bytewise.stringCodec.encode(buffer)
+  }
+
+  assert(!buffer || !buffer.undecodable, &#x27;Encoded value not decodable&#x27;)
+
+  var byte = buffer[0]
+  var type = bytewise.getType(byte)
+  assert(type, &#x27;Invalid encoding: &#x27; + buffer)
+
+  // if type provides a decoder it is passed the base type system as second arg
+  var codec = type.codec
+  if (codec) {
+    var decoded = codec.decode(buffer.slice(1), bytewise)
+
+    if (options &#x26;&#x26; options.nested &#x26;&#x26; codec.unescape)
+      decoded = codec.unescape(decoded)
+
+    return postDecode(decoded, options)
+  }
+
+  // nullary types without a codec must provide a value for their decoded form
+  assert(&#x27;value&#x27; in type, &#x27;Unsupported encoding: &#x27; + buffer)
+  return postDecode(type.value, options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var core = require(&#x27;./binary&#x27;)
+
+exports.encode = function (source) {
+  return core.encode(source).toString(&#x27;hex&#x27;)
+}
+
+exports.decode = function (buffer) {
+  return core.<span class="apidocCodeKeywordSpan">decode</span>(buffer.toString(&#x27;hex&#x27;))
+}
+
+exports.buffer = false;
+exports.type = &#x27;bytewise-hex&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.encode" id="apidoc.element.bytewise.encode">
+        function <span class="apidocSignatureSpan">bytewise.</span>encode
+        <span class="apidocSignatureSpan">(source, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (source, options) {
+
+  // check for invalid/incomparable values
+  assert(!base.invalid(source), &#x27;Invalid value&#x27;)
+
+  // encode bound types (ranges)
+  var boundary = base.bound.getBoundary(source)
+  if (boundary)
+    return boundary.encode(source, bytewise)
+
+  // encode standard value-typed sorts
+  var order = base.order
+  var sort
+  for (var i = 0, length = order.length; i &#x3c; length; ++i) {
+    sort = sorts[order[i]]
+
+    if (sort.is(source)) {
+
+      // loop over any subsorts defined on sort
+      // TODO: clean up
+      var subsorts = sort.sorts ||  { &#x27;&#x27;: sort }
+      for (key in subsorts) {
+        var subsort = subsorts[key]
+        if (subsort.is(source))
+          return serialize(subsort, source, options)
+      }
+
+      // source is an unsupported subsort
+      assert(false, &#x27;Unsupported sort value&#x27;)
+    }
+  }
+
+  // no type descriptor found
+  assert(false, &#x27;Unknown value&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+// TODO: encoding class hierarchy
+
+var core = require(&#x27;./binary&#x27;)
+
+exports.encode = function (source) {
+  return core.<span class="apidocCodeKeywordSpan">encode</span>(source).toString(&#x27;hex&#x27;)
+}
+
+exports.decode = function (buffer) {
+  return core.decode(buffer.toString(&#x27;hex&#x27;))
+}
+
+exports.buffer = false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.equal" id="apidoc.element.bytewise.equal">
+        function <span class="apidocSignatureSpan">bytewise.</span>equal
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equal = function (a, b) {
+  return base.compare(a, b) === 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+var assert = require(&#x27;assert&#x27;);
+var bytewise = require(&#x27;./&#x27;);
+var encode = bytewise.encode;
+
+// Many types can be represented using only their type tag, a single byte
+assert.<span class="apidocCodeKeywordSpan">equal</span>(encode(null).toString(&#x27;binary&#x27;), &#x27;\x10&#x27;);
+assert.equal(encode(false).toString(&#x27;binary&#x27;), &#x27;\x20&#x27;);
+assert.equal(encode(true).toString(&#x27;binary&#x27;), &#x27;\x21&#x27;);
+assert.equal(encode(undefined).toString(&#x27;binary&#x27;), &#x27;\xf0&#x27;);
+
+// Numbers are stored in 9 bytes -- 1 byte for the type tag and an 8 byte float
+assert.equal(encode(12345).toString(&#x27;hex&#x27;), &#x27;4240c81c8000000000&#x27;);
+// Negative numbers are stored as positive numbers, but with a lower type tag and their bits inverted
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.getType" id="apidoc.element.bytewise.getType">
+        function <span class="apidocSignatureSpan">bytewise.</span>getType
+        <span class="apidocSignatureSpan">(byte)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getType = function (byte) {
+
+  // construct and memoize byte prefix registry on first run
+  if (!PREFIX_REGISTRY) {
+    PREFIX_REGISTRY = {}
+
+    // register sorts
+    var sort
+    for (var key in sorts) {
+      sort = sorts[key]
+
+      // if sort has subsorts register these instead
+      sort.sorts ? registerTypes(sort.sorts) : registerType(sort)
+    }
+  }
+
+  return PREFIX_REGISTRY[byte]
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.postDecode" id="apidoc.element.bytewise.postDecode">
+        function <span class="apidocSignatureSpan">bytewise.</span>postDecode
+        <span class="apidocSignatureSpan">(decoded, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">postDecode = function (decoded, options) {
+  return decoded
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.postEncode" id="apidoc.element.bytewise.postEncode">
+        function <span class="apidocSignatureSpan">bytewise.</span>postEncode
+        <span class="apidocSignatureSpan">(encoded, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">postEncode = function (encoded, options) {
+
+  // override buffer toString method to default to hex to help coercion issues
+  // TODO: just return pure buffer, do this toString hackery in bytewise
+  encoded.toString = function (encoding) {
+    if (!encoding)
+      return bytewise.stringCodec.decode(encoded)
+
+    return Buffer.prototype.toString.apply(encoded, arguments)
+  }
+
+  return encoded
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bytewise.bound" id="apidoc.module.bytewise.bound">module bytewise.bound</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.bound.compare" id="apidoc.element.bytewise.bound.compare">
+        function <span class="apidocSignatureSpan">bytewise.bound.</span>compare
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compare = function (a, b) {
+  var aBound = base.bound.is(a)
+  var bBound = base.bound.is(b)
+  if (aBound) {
+    if (bBound &#x26;&#x26; !a.upper === !b.upper)
+      return 0
+    return a.upper ? 1 : -1
+  }
+
+  if (bBound)
+    return -base.bound.compare(b, a)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.bound.encode" id="apidoc.element.bytewise.bound.encode">
+        function <span class="apidocSignatureSpan">bytewise.bound.</span>encode
+        <span class="apidocSignatureSpan">(data, base)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (data, base) {
+  return util.encodedBound(data, new Buffer([ data.upper ? 0xff : 0x00 ]))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+// TODO: encoding class hierarchy
+
+var core = require(&#x27;./binary&#x27;)
+
+exports.encode = function (source) {
+  return core.<span class="apidocCodeKeywordSpan">encode</span>(source).toString(&#x27;hex&#x27;)
+}
+
+exports.decode = function (buffer) {
+  return core.decode(buffer.toString(&#x27;hex&#x27;))
+}
+
+exports.buffer = false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.bound.getBoundary" id="apidoc.element.bytewise.bound.getBoundary">
+        function <span class="apidocSignatureSpan">bytewise.bound.</span>getBoundary
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBoundary = function (source) {
+  return source instanceof BoundedKey &#x26;&#x26; source.bound
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bytewise.bound.sort" id="apidoc.module.bytewise.bound.sort">module bytewise.bound.sort</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.bound.sort.compare" id="apidoc.element.bytewise.bound.sort.compare">
+        function <span class="apidocSignatureSpan">bytewise.bound.sort.</span>compare
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compare = function (a, b) {
+  //
+  // test for invalid values
+  //
+  if (base.invalid(a, b))
+    return NaN
+
+  //
+  // short circuit for identical objects
+  //
+  if (a === b)
+    return 0
+
+  //
+  // short circuit for base bound types
+  //
+  var result = base.bound.compare(a, b)
+  if (result !== undefined)
+    return result
+
+  //
+  // cache typeof and valueOf for both values
+  //
+  var aTypeOf = typeof a
+  var bTypeOf = typeof b
+  var aValueOf = _valueOf(a)
+  var bValueOf = _valueOf(b)
+
+  //
+  // loop over type tags and attempt compare
+  //
+  var order = base.order
+  var sorts = base.sorts
+  var sort
+  for (var i = 0, length = order.length; i &#x3c; length; ++i) {
+    sort = sorts[order[i]]
+
+    //
+    // if first arg is a member of this sort we have an answer
+    //
+    if (sort.is(a, aTypeOf))
+      //
+      // if b is the same as a then defer to sort&#x27;s comparator, else a comes first
+      //
+      return sort.is(b, bTypeOf) ? sort.compare(aValueOf, bValueOf) : -1
+
+    //
+    // if b is this type but not a then b comes first
+    //
+    if (sort.is(b, bTypeOf))
+      return 1
+  }
+
+  //
+  // values are incomparable as they didn&#x27;t match against any registered types
+  //
+  return NaN
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.bound.sort.equal" id="apidoc.element.bytewise.bound.sort.equal">
+        function <span class="apidocSignatureSpan">bytewise.bound.sort.</span>equal
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">equal = function (a, b) {
+  return base.compare(a, b) === 0
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+var assert = require(&#x27;assert&#x27;);
+var bytewise = require(&#x27;./&#x27;);
+var encode = bytewise.encode;
+
+// Many types can be represented using only their type tag, a single byte
+assert.<span class="apidocCodeKeywordSpan">equal</span>(encode(null).toString(&#x27;binary&#x27;), &#x27;\x10&#x27;);
+assert.equal(encode(false).toString(&#x27;binary&#x27;), &#x27;\x20&#x27;);
+assert.equal(encode(true).toString(&#x27;binary&#x27;), &#x27;\x21&#x27;);
+assert.equal(encode(undefined).toString(&#x27;binary&#x27;), &#x27;\xf0&#x27;);
+
+// Numbers are stored in 9 bytes -- 1 byte for the type tag and an 8 byte float
+assert.equal(encode(12345).toString(&#x27;hex&#x27;), &#x27;4240c81c8000000000&#x27;);
+// Negative numbers are stored as positive numbers, but with a lower type tag and their bits inverted
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.bound.sort.invalid" id="apidoc.element.bytewise.bound.sort.invalid">
+        function <span class="apidocSignatureSpan">bytewise.bound.sort.</span>invalid
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">invalid = function (a, b) {
+  var types = base.invalid
+  for (var key in types) {
+    var type = types[key]
+    if (type &#x26;&#x26; type.is &#x26;&#x26; (type.is(a) || type.is(b)))
+      return true
+  }
+  return false
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bytewise.hex" id="apidoc.module.bytewise.hex">module bytewise.hex</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.hex.decode" id="apidoc.element.bytewise.hex.decode">
+        function <span class="apidocSignatureSpan">bytewise.hex.</span>decode
+        <span class="apidocSignatureSpan">(buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode = function (buffer) {
+  return core.decode(buffer.toString(&#x27;hex&#x27;))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var core = require(&#x27;./binary&#x27;)
+
+exports.encode = function (source) {
+  return core.encode(source).toString(&#x27;hex&#x27;)
+}
+
+exports.decode = function (buffer) {
+  return core.<span class="apidocCodeKeywordSpan">decode</span>(buffer.toString(&#x27;hex&#x27;))
+}
+
+exports.buffer = false;
+exports.type = &#x27;bytewise-hex&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.hex.encode" id="apidoc.element.bytewise.hex.encode">
+        function <span class="apidocSignatureSpan">bytewise.hex.</span>encode
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (source) {
+  return core.encode(source).toString(&#x27;hex&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+// TODO: encoding class hierarchy
+
+var core = require(&#x27;./binary&#x27;)
+
+exports.encode = function (source) {
+  return core.<span class="apidocCodeKeywordSpan">encode</span>(source).toString(&#x27;hex&#x27;)
+}
+
+exports.decode = function (buffer) {
+  return core.decode(buffer.toString(&#x27;hex&#x27;))
+}
+
+exports.buffer = false;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bytewise.stringCodec" id="apidoc.module.bytewise.stringCodec">module bytewise.stringCodec</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.stringCodec.decode" id="apidoc.element.bytewise.stringCodec.decode">
+        function <span class="apidocSignatureSpan">bytewise.stringCodec.</span>decode
+        <span class="apidocSignatureSpan">(buffer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode = function (buffer) {
+  return buffer.toString(&#x27;hex&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var core = require(&#x27;./binary&#x27;)
+
+exports.encode = function (source) {
+  return core.encode(source).toString(&#x27;hex&#x27;)
+}
+
+exports.decode = function (buffer) {
+  return core.<span class="apidocCodeKeywordSpan">decode</span>(buffer.toString(&#x27;hex&#x27;))
+}
+
+exports.buffer = false;
+exports.type = &#x27;bytewise-hex&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bytewise.stringCodec.encode" id="apidoc.element.bytewise.stringCodec.encode">
+        function <span class="apidocSignatureSpan">bytewise.stringCodec.</span>encode
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (source) {
+  return new Buffer(source, &#x27;hex&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+// TODO: encoding class hierarchy
+
+var core = require(&#x27;./binary&#x27;)
+
+exports.encode = function (source) {
+  return core.<span class="apidocCodeKeywordSpan">encode</span>(source).toString(&#x27;hex&#x27;)
+}
+
+exports.decode = function (buffer) {
+  return core.decode(buffer.toString(&#x27;hex&#x27;))
+}
+
+exports.buffer = false;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
