@@ -1,8 +1,8 @@
 # npmdoc-bytewise
 
-api documentation for  [bytewise (v1.1.0)](https://github.com/deanlandolt/bytewise)  [![npm package](https://img.shields.io/npm/v/npmdoc-bytewise.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-bytewise) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-bytewise.svg)](https://travis-ci.org/npmdoc/node-npmdoc-bytewise)
+#### basic api documentation for  [bytewise (v1.1.0)](https://github.com/deanlandolt/bytewise)  [![npm package](https://img.shields.io/npm/v/npmdoc-bytewise.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-bytewise) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-bytewise.svg)](https://travis-ci.org/npmdoc/node-npmdoc-bytewise)
 
-Binary serialization which sorts bytewise for arbirarily complex data structures
+#### Binary serialization which sorts bytewise for arbirarily complex data structures
 
 [![NPM](https://nodei.co/npm/bytewise.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/bytewise)
 
@@ -67,7 +67,8 @@ Binary serialization which sorts bytewise for arbirarily complex data structures
     "scripts": {
         "test": "tape test | faucet"
     },
-    "version": "1.1.0"
+    "version": "1.1.0",
+    "bin": {}
 }
 ```
 
